@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `attractions` (
 	ID int NOT NULL,
   `name` varchar(255) NOT NULL,
-  `country` varchar(255) DEFAULT NULL
+  `country` varchar(255) DEFAULT NULL,
    PRIMARY KEY (ID)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
