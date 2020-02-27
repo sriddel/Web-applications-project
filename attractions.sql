@@ -27,37 +27,41 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `attractions`
 --
-
 CREATE TABLE `attractions` (
+	ID int NOT NULL,
   `name` varchar(255) NOT NULL,
-  `country` varchar(255) DEFAULT NULL
+  `country` varchar(255) DEFAULT NULL,
+  `continent` varchar(255) DEFAULT NULL,
+  `rating` int DEFAULT 5,
+  `filename` varchar(255) DEFAULT NULL 
+  PRIMARY KEY (ID)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `attractions`
 --
 
-INSERT INTO `attractions` (`name`, `country`) VALUES
-('Great Barrier Reef', 'Australia'),
-('Sydney Harbour Bridge', 'Australia'),
-('CN tower', 'Canada'),
-('Rogers Center', 'Canada'),
-('The Berlin Wall', 'Germany'),
-('The Black Forest', 'Germany'),
-('Amboseli National Park', 'Kenya'),
-('Samburu National Reserve', 'Kenya'),
-('Keukenhof', 'Netherlands'),
-('Van Gogh Museum', 'Netherlands'),
-('Hawkes Bay', 'NewZealand'),
-('Rotorua, North Island', 'NewZealand'),
-('Awhum Waterfall', 'Nigeria'),
-('Obudu Mountain Resort', 'Nigeria'),
-('gardens by the bay', 'Singapore'),
-('marina bay sands hotel', 'Singapore'),
-('Maokong Zoo', 'Taiwan'),
-('National Palace Museum', 'Taiwan'),
-('Grand Canyon', 'US'),
-('Mount Rushmore', 'US');
+INSERT INTO `attractions` (`name`, `country`, `continent`, `rating`, `filename`) VALUES
+('Great Barrier Reef', 'Australia', 'Oceania',5,'grebarreef'),
+('Sydney Harbour Bridge', 'Australia', 'Oceania',5,'sydharbridge'),
+('CN tower', 'Canada', 'America',5,'cntower'),
+('Rogers Center', 'Canada', 'America',5,'rogcenter'),
+('The Berlin Wall', 'Germany', 'Europe',5,'berwall'),
+('The Black Forest', 'Germany', 'Europe',5,'blackforest'),
+('Amboseli National Park', 'Kenya', 'Africa',5,'amboseli'),
+('Samburu National Reserve', 'Kenya', 'Africa',5,'samburu'),
+('Keukenhof', 'Netherlands', 'Europe',5,'keukenhof'),
+('Van Gogh Museum', 'Netherlands', 'Europe',5,'vangohmuseum'),
+('Hawkes Bay', 'NewZealand', 'Oceania',5,'hawkesbay'),
+('Rotorua, North Island', 'NewZealand', 'Oceania',5,'rotnorisland'),
+('Awhum Waterfall', 'Nigeria', 'Africa',5,'awhum'),
+('Obudu Mountain Resort', 'Nigeria', 'Africa',5,'obudu'),
+('gardens by the bay', 'Singapore', 'Asia',5,'gardensbythebay'),
+('marina bay sands hotel', 'Singapore', 'Asia',5,'marinabayhotel'),
+('Maokong Zoo', 'Taiwan', 'Asia',5,'maokongzoo'),
+('National Palace Museum', 'Taiwan', 'Asia',5,'natpalmuseum'),
+('Grand Canyon', 'US', 'America',5,'grandcanyon'),
+('Mount Rushmore', 'US', 'America',5,'mountrushmore');
 
 --
 -- Indexes for dumped tables
