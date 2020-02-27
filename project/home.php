@@ -15,9 +15,14 @@ $password = "cps630cps";
 $dbname = "places";
 
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-if (!$conn) { die ("Connection Failed"); }
-
+try {
+	$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	//echo "Connected";
+}
+catch (PDOException $e){
+	echo "Connection failed: " . $e->getMessage();
+}
 
 try {
 
@@ -31,22 +36,17 @@ try {
   $continentsArray = array();
   foreach ($continents as $continent) {
 
-    $SQLstatement = "SELECT name FROM country WHERE continent = '$continent'";
+    $SQLstatement = "SELECT name FROM attractions WHERE continent = '$continent'";
     $rows = [];
-    $result = mysqli_query($conn, $SQLstatement);
+    $result = $conn->query($SQLstatement);
     $datas = array(); 
-    if (mysqli_num_rows($result) > 0) {
-      while($row = mysqli_fetch_assoc($result)){
+    while($row = $result->fetch()){
         array_push($datas, $row);
-      }
     }
 
     $continentsArray[$continent] = $datas;
 
   }
-
-
-
 
   // $Africa = "SELECT name FROM country WHERE continent = 'Africa'";
   // $rows = [];
@@ -84,9 +84,9 @@ echo "var javascript_array = ". $js_array . ";\n";
 
 <ul class="nav">
   <li class="navelement"><a class="active" href="#home">Home</a></li>
-  <li class="navelement"><a href="#news">About us</a></li>
+  <li class="navelement"><a href="#about">About us</a></li>
   <li class="navelement"><a href="#contact">Contact us</a></li>
-  <li class="navelement"><a href="#about">Shopping cart</a></li>
+  <li class="navelement"><a href="#cart">Shopping cart</a></li>
 </ul>
 
 <div class="grid-container">
@@ -134,7 +134,7 @@ echo "var javascript_array = ". $js_array . ";\n";
 
 
 
-<div id="div2">TEster variable</div>
+<div id="div2">Tester variable</div>
 
 <button>BUTTON</button>
 <script>
