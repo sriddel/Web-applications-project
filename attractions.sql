@@ -31,33 +31,35 @@ SET time_zone = "+00:00";
 CREATE TABLE `attractions` (
   `name` varchar(255) NOT NULL,
   `country` varchar(255) DEFAULT NULL
+  `continent` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `attractions`
 --
 
-INSERT INTO `attractions` (`name`, `country`) VALUES
-('Great Barrier Reef', 'Australia'),
-('Sydney Harbour Bridge', 'Australia'),
-('CN tower', 'Canada'),
-('Rogers Center', 'Canada'),
-('The Berlin Wall', 'Germany'),
-('The Black Forest', 'Germany'),
-('Amboseli National Park', 'Kenya'),
-('Samburu National Reserve', 'Kenya'),
-('Keukenhof', 'Netherlands'),
-('Van Gogh Museum', 'Netherlands'),
-('Hawkes Bay', 'NewZealand'),
-('Rotorua, North Island', 'NewZealand'),
-('Awhum Waterfall', 'Nigeria'),
-('Obudu Mountain Resort', 'Nigeria'),
-('gardens by the bay', 'Singapore'),
-('marina bay sands hotel', 'Singapore'),
-('Maokong Zoo', 'Taiwan'),
-('National Palace Museum', 'Taiwan'),
-('Grand Canyon', 'US'),
-('Mount Rushmore', 'US');
+INSERT INTO `attractions` (`name`, `country`, `continent`) VALUES
+('Great Barrier Reef', 'Australia', 'Oceania'),
+('Sydney Harbour Bridge', 'Australia', 'Oceania'),
+('CN tower', 'Canada', 'America'),
+('Rogers Center', 'Canada', 'America'),
+('The Berlin Wall', 'Germany', 'Europe'),
+('The Black Forest', 'Germany', 'Europe'),
+('Amboseli National Park', 'Kenya', 'Africa'),
+('Samburu National Reserve', 'Kenya', 'Africa'),
+('Keukenhof', 'Netherlands', 'Europe'),
+('Van Gogh Museum', 'Netherlands', 'Europe'),
+('Hawkes Bay', 'NewZealand', 'Oceania'),
+('Rotorua, North Island', 'NewZealand', 'Oceania'),
+('Awhum Waterfall', 'Nigeria', 'Africa'),
+('Obudu Mountain Resort', 'Nigeria', 'Africa'),
+('gardens by the bay', 'Singapore', 'Asia'),
+('marina bay sands hotel', 'Singapore', 'Asia'),
+('Maokong Zoo', 'Taiwan', 'Asia'),
+('National Palace Museum', 'Taiwan', 'Asia'),
+('Grand Canyon', 'US', 'America'),
+('Mount Rushmore', 'US', 'America');
+
 
 --
 -- Indexes for dumped tables
